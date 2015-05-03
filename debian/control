@@ -1,0 +1,33 @@
+Source: multistrap
+Section: utils
+Priority: optional
+Maintainer: Neil Williams <codehelp@debian.org>
+Uploaders: Wookey <wookey@debian.org>
+Build-Depends: cdbs, debhelper (>= 7), po4a (>= 0.37.1)
+Build-Depends-Indep: intltool
+Standards-Version: 3.9.6
+Homepage: https://github.com/codehelp/multistrap
+Vcs-Git: https://github.com/codehelp/multistrap.git
+Vcs-Browser: https://github.com/codehelp/multistrap
+
+Package: multistrap
+Section: admin
+Architecture: all
+Depends: ${perl:Depends}, ${misc:Depends}, apt, libconfig-auto-perl, 
+ liblocale-gettext-perl, libparse-debian-packages-perl
+Suggests: fakeroot
+Description: multiple repository bootstrap based on apt
+ A debootstrap replacement with multiple repository support,
+ using apt to handle all dependency issues and conflicts.
+ .
+ Multistrap includes support for native and foreign architecture
+ bootstrap environments. Foreign bootstraps only need minimal
+ configuration on the final device. Also supports cleaning up the
+ generated bootstrap filesystem to remove downloaded packages and
+ hooks to modify the files in the bootstrap filesystem after the
+ packages have been unpacked but before being configured.
+ .
+ Unlike debootstrap, multistrap relies on working versions of
+ dpkg and apt outside the final filesystem. If dpkg supports
+ MultiArch, foreign architecture libraries can be installed,
+ where available.
