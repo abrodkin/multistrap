@@ -1,8 +1,8 @@
 Source: multistrap
 Section: utils
 Priority: optional
-Maintainer: Neil Williams <codehelp@debian.org>
-Uploaders: Wookey <wookey@debian.org>
+Maintainer: Johannes Schauer <josch@debian.org>
+Uploaders: Wookey <wookey@debian.org>, Neil Williams <codehelp@debian.org>
 Build-Depends: cdbs, debhelper (>= 7), po4a (>= 0.37.1)
 Build-Depends-Indep: intltool
 Standards-Version: 3.9.6
