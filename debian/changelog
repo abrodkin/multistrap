@@ -6,6 +6,8 @@ multistrap (2.2.2) UNRELEASED; urgency=medium
     target)
   * Bump debhelper compatibility level to 10
   * Switch debian/rules to dh and drop cdbs
+  * Use dh_bash-completion to install bash completion script into the right
+    location (fixes lintian warning about deprecated /etc/bash_completion.d/)
 
  -- Johannes Schauer <josch@debian.org>  Fri, 02 Dec 2016 23:25:07 +0100
 

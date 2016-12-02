@@ -13,4 +13,3 @@ examples/chroot.conf ./usr/share/multistrap/
 check-deps.sh ./usr/share/multistrap/
 device-table.pl ./usr/share/multistrap/
 update-rc.d ./usr/share/multistrap/
-bash/multistrap ./etc/bash_completion.d/
