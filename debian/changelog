@@ -1,9 +1,9 @@
-multistrap (2.2.3) UNRELEASED; urgency=medium
+multistrap (2.2.3) unstable; urgency=medium
 
   * The B-D-A header doesn't make any sense without Architecture:any packages
     to be built. Move them to B-D-I.
 
- -- Johannes Schauer <josch@debian.org>  Sat, 03 Dec 2016 22:54:08 +0100
+ -- Johannes Schauer <josch@debian.org>  Sat, 03 Dec 2016 22:54:46 +0100
 
 multistrap (2.2.2) unstable; urgency=medium
 
