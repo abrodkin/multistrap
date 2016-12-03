@@ -1,4 +1,4 @@
-multistrap (2.2.2) UNRELEASED; urgency=medium
+multistrap (2.2.2) unstable; urgency=medium
 
   * New maintainer (Closes: #835909)
   * Move development to dgit
@@ -15,7 +15,7 @@ multistrap (2.2.2) UNRELEASED; urgency=medium
     #803365)
   * Stop creating /etc/dpkg/dpkg.cfg.d/multiarch (closes: #819103)
 
- -- Johannes Schauer <josch@debian.org>  Fri, 02 Dec 2016 23:25:07 +0100
+ -- Johannes Schauer <josch@debian.org>  Sat, 03 Dec 2016 18:53:43 +0100
 
 multistrap (2.2.1) unstable; urgency=medium
 
