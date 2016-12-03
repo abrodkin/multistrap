@@ -11,6 +11,8 @@ multistrap (2.2.2) UNRELEASED; urgency=medium
   * Do not try to feed GPG keybox database version 1 files to apt (closes:
     #845963)
   * Allow uppercase letters in paths (closes: #751896)
+  * Allow shell special characters (including spaces) in paths (closes:
+    #803365)
 
  -- Johannes Schauer <josch@debian.org>  Fri, 02 Dec 2016 23:25:07 +0100
 
