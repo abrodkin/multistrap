@@ -24,6 +24,7 @@ use File::Basename;
 use Parse::Debian::Packages;
 use POSIX qw(locale_h);
 use Locale::gettext;
+use File::Copy;
 
 use vars qw/ $progname $ourversion $dstrap $extra @aptsources
  $deb $cachedir $config_str %packages $retval $str $retries
@@ -316,20 +317,9 @@ if ((defined $k) and (not defined $noauth)) {
 		}
 		foreach my $gpg (@files) {
 			next if ($gpg =~ /removed/);
-			$retval = system ("gpg --no-default-keyring ".
-				"--homedir=${dir}/etc/apt/trusted.gpg.d/ ".
-				"--keyring=multistrap.gpg ".
-				" --import ${xdir}/usr/share/keyrings/${gpg} 2>/dev/null");
-			$retval >>= 8;
-			die (_g("Secure Apt handling failed - try without authentication."))
-				if ($retval != 0);
+			File::Copy::copy "${xdir}/usr/share/keyrings/${gpg}", "${dir}${etcdir}trusted.gpg.d/";
 		}
 		system ("rm -rf ${xdir}");
-	}
-	if (-f "${dir}/etc/apt/trusted.gpg.d/multistrap.gpg") {
-		system_fatal ("cp ${dir}/etc/apt/trusted.gpg.d/multistrap.gpg ${dir}/etc/apt/trusted.gpg.d/trustdb.gpg");
-	} else {
-		die (_g("Secure Apt handling failed - try without authentication.")."\n");
 	}
 }
 
