@@ -1163,9 +1163,9 @@ sub cascade {
 			$unpack = "false" if (defined $keys{$section}{'forceunpack'} and (lc($keys{$section}{'forceunpack'}) ne "true"));
 			$unpack = "false" if (defined $keys{$section}{'unpack'} and (lc($keys{$section}{'unpack'} ne "true")));
 			$markauto++ if ((defined $keys{$section}{'markauto'}) and (lc($keys{$section}{'markauto'}) eq "true"));
-			$configsh = lc($keys{$section}{'configscript'})
+			$configsh = $keys{$section}{'configscript'}
 				if (defined $keys{$section}{'configscript'} and (not defined $configsh));
-			$tgzname = lc($keys{$section}{'tarballname'})
+			$tgzname = $keys{$section}{'tarballname'}
 				if (defined $keys{$section}{'tarballname'} and (not defined $tgzname));
 			chomp($tgzname) if (defined $tgzname);
 			undef $tgzname if (defined $tgzname and $tgzname eq '');
@@ -1178,7 +1178,7 @@ sub cascade {
 				warn $configmsg;
 				$warn_count++;
 			}
-			$setupsh = lc($keys{$section}{'setupscript'})
+			$setupsh = $keys{$section}{'setupscript'}
 				if (defined $keys{$section}{'setupscript'} and (not defined $setupsh));
 			undef $setupsh if ((defined $setupsh) and (not -x $setupsh));
 			$omitrequired++ if (defined $keys{$section}{'omitrequired'} and (lc($keys{$section}{'omitrequired'}) eq "true"));
@@ -1188,7 +1188,7 @@ sub cascade {
 			$noauth++ if ((defined $keys{$section}{'noauth'}) and ($keys{$section}{'noauth'} eq "true"));
 			$ignorenative++ if ((defined $keys{$section}{'ignorenativearch'}) and
 				(lc($keys{$section}{'ignorenativearch'}) eq 'true'));
-			$preffile = lc($keys{$section}{'aptpreferences'})
+			$preffile = $keys{$section}{'aptpreferences'}
 				if (defined $keys{$section}{'aptpreferences'} and (not defined $preffile));
 			undef $preffile if ((defined $preffile) and (not -f $preffile));
 			$sourcedir = $keys{$section}{'retainsources'}
@@ -1197,9 +1197,9 @@ sub cascade {
 				($keys{$section}{'explicitsuite'} eq "true"));
 			$allow_recommends++ if ((defined $keys{$section}{'allowrecommends'}) and
 				($keys{$section}{'allowrecommends'} eq "true"));
-			$default_release = lc($keys{$section}{'aptdefaultrelease'})
+			$default_release = $keys{$section}{'aptdefaultrelease'}
 				if (defined $keys{$section}{'aptdefaultrelease'});
-			my @p = split(' ', lc($keys{$section}{'debconfseed'}))
+			my @p = split(' ', $keys{$section}{'debconfseed'})
 				if (defined $keys{$section}{'debconfseed'});
 			foreach my $f (@p) {
 				my $fl = realpath ($f);
@@ -1208,7 +1208,7 @@ sub cascade {
 				chomp ($fl);
 				push @debconf, $fl;
 			}
-			my @h = split(' ', lc($keys{$section}{'hookdir'}))
+			my @h = split(' ', $keys{$section}{'hookdir'})
 				if (defined $keys{$section}{'hookdir'});
 			foreach my $f (@h) {
 				opendir (HOOKS, "$f") or next;
@@ -1224,7 +1224,7 @@ sub cascade {
 			}
 			my @ma=();
 			if ($olddpkg == 0) {
-				@ma = split(' ',lc($keys{$section}{'multiarch'}))
+				@ma = split(' ',$keys{$section}{'multiarch'})
 					if (defined $keys{$section}{'multiarch'});
 				}
 			push @foreignarches, @ma;
@@ -1297,11 +1297,11 @@ sub cascade {
 				if (not exists $components{$section} and not exists $flatfile{$section});
 			$omitdebsrc{$section}=$section if ((defined $keys{$section}{'omitdebsrc'})
 				and ($keys{$section}{'omitdebsrc'} eq "true"));
-			push @reinstall, split (/ /, lc($keys{$section}{'reinstall'}))
+			push @reinstall, split (/ /, $keys{$section}{'reinstall'})
 				if (defined $keys{$section}{'reinstall'});
 			$components{$section}='main' if (not defined $components{$section});
 			$keyrings{$section}=$keys{$section}{'keyring'} if (not exists $keyrings{$section});
-			push @extrapkgs, split (' ', lc($keys{$section}{'additional'}))
+			push @extrapkgs, split (' ', $keys{$section}{'additional'})
 				if (defined $keys{$section}{'additional'});
 		}
 	}
