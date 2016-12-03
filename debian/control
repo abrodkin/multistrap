@@ -4,8 +4,7 @@ Priority: optional
 Maintainer: Johannes Schauer <josch@debian.org>
 Uploaders: Wookey <wookey@debian.org>, Neil Williams <codehelp@debian.org>
 Build-Depends: debhelper (>= 10)
-Build-Depends-Arch: po4a (>= 0.37.1), bash-completion
-Build-Depends-Indep: intltool
+Build-Depends-Indep: intltool, po4a (>= 0.37.1), bash-completion
 Standards-Version: 3.9.6
 Vcs-Browser: https://browse.dgit.debian.org/multistrap.git/
 Vcs-Git: https://git.dgit.debian.org/multistrap
