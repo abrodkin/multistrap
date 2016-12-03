@@ -202,22 +202,12 @@ if (not -d "${dir}dev") {
 	mkdir_fatal ("${dir}dev");
 }
 if (($olddpkg == 0) and (scalar (@foreignarches) > 0)) {
-	if (not -d "${dir}etc/dpkg/dpkg.cfg.d/") {
-		system_fatal ("mkdir -p " . shellescape("${dir}etc/dpkg/dpkg.cfg.d/"));
+	open (VMA, ">${dir}${dpkgdir}arch");
+	print VMA "$host\n";
+	foreach my $farch (@foreignarches) {
+		print VMA "$farch\n";
 	}
-	if (not -f "${dir}etc/dpkg/dpkg.cfg.d/multiarch") {
-		open (MA, ">${dir}etc/dpkg/dpkg.cfg.d/multiarch");
-		foreach my $farch (@foreignarches) {
-			print MA "foreign-architecture $farch\n";
-		}
-		close (MA);
-		open (VMA, ">${dir}${dpkgdir}arch");
-		print VMA "$host\n";
-		foreach my $farch (@foreignarches) {
-			print VMA "$farch\n";
-		}
-		close (VMA);
-	}
+	close (VMA);
 }
 
 &guard_lib64($dir);
