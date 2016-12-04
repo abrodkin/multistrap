@@ -273,25 +273,12 @@ foreach my $pkg (values %keyrings) {
 	$k .= "$pkg ";
 }
 if ((defined $k) and (not defined $noauth)) {
-	# the keyring package must be available to the external apt
-	# and apt refuses to allow fakeroot to do this.
-	$str = "";
-	if (not exists $ENV{FAKEROOTKEY}) {
-		if ((exists $ENV{USER}) and ($ENV{USER} ne "root")) {
-			$str = "sudo" if (-f "/usr/bin/sudo");
-		}
-	} else {
-		print "Turning off SecureApt due to use of fakeroot\n";
-		$noauth++;
-	}
-}
-if ((defined $k) and (not defined $noauth)) {
-	printf (_g("I: Installing %s\n"), $k);
-	system ("$str apt-get -y -d --reinstall install $k");
+	printf (_g("I: Downloading %s\n"), $k);
+	system ("apt-get -y download $k");
 	foreach my $keyring_pkg (values %keyrings) {
 		next if (not defined $keyring_pkg);
 		my @files=();
-		my $file = `find /var/cache/apt/archives/ -name "$keyring_pkg*"|grep -m1 $keyring_pkg`;
+		my $file = `find ./ -name "${keyring_pkg}_*_all.deb"|grep -m1 $keyring_pkg`;
 		chomp ($file);
 		if ($file eq "") {
 			my $msg = sprintf (_g("Unable to download keyring package: '%s'"),$dir);
@@ -310,6 +297,7 @@ if ((defined $k) and (not defined $noauth)) {
 			File::Copy::copy "${xdir}/usr/share/keyrings/${gpg}", "${dir}${etcdir}trusted.gpg.d/";
 		}
 		system ("rm -rf ${xdir}");
+		unlink ($file);
 	}
 }
 
