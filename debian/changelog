@@ -1,3 +1,10 @@
+multistrap (2.2.7) UNRELEASED; urgency=medium
+
+  * Since bash completion was moved away from /etc, invoke rm_conffile in
+    maintainer script (Thanks, Helmut Grohne)
+
+ -- Johannes Schauer <josch@debian.org>  Mon, 05 Dec 2016 16:32:20 +0100
+
 multistrap (2.2.6) unstable; urgency=medium
 
   * Fix value for Dir::Etc::Trusted to point at trusted.gpg outside of
