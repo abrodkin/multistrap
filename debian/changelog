@@ -2,6 +2,7 @@ multistrap (2.2.6) UNRELEASED; urgency=medium
 
   * Fix value for Dir::Etc::Trusted to point at trusted.gpg outside of
     trusted.gpg.d (Thanks, Steve Langasek)
+  * Add Ubuntu examples for Trusty (closes: #847061)
 
  -- Johannes Schauer <josch@debian.org>  Mon, 05 Dec 2016 14:55:43 +0100
 
