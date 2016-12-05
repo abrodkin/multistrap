@@ -316,7 +316,7 @@ close CONFIG;
 $config_str = '';
 $config_str .= " -o Apt::Architecture=" . shellescape($arch);
 $config_str .= " -o Dir::Etc::TrustedParts=" . shellescape("${dir}${etcdir}trusted.gpg.d");
-$config_str .= " -o Dir::Etc::Trusted=" . shellescape("${dir}${etcdir}trusted.gpg.d/trusted.gpg");
+$config_str .= " -o Dir::Etc::Trusted=" . shellescape("${dir}${etcdir}trusted.gpg");
 $config_str .= " -o Apt::Get::AllowUnauthenticated=true"
 	if (defined $noauth);
 $config_str .= " -o Apt::Get::Download-Only=true";
