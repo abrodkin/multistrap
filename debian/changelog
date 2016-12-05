@@ -1,8 +1,8 @@
-multistrap (2.2.5) UNRELEASED; urgency=medium
+multistrap (2.2.5) unstable; urgency=medium
 
   * Remove Neil Williams from Uploaders
 
- -- Johannes Schauer <josch@debian.org>  Mon, 05 Dec 2016 10:14:17 +0100
+ -- Johannes Schauer <josch@debian.org>  Mon, 05 Dec 2016 10:14:48 +0100
 
 multistrap (2.2.4) unstable; urgency=medium
 
