@@ -1,3 +1,9 @@
+multistrap (2.2.5) UNRELEASED; urgency=medium
+
+  * Remove Neil Williams from Uploaders
+
+ -- Johannes Schauer <josch@debian.org>  Mon, 05 Dec 2016 10:14:17 +0100
+
 multistrap (2.2.4) unstable; urgency=medium
 
   * handle keyring download differently:
