@@ -973,7 +973,7 @@ sub native {
 		closedir (SEEDS);
 		foreach my $s (@seeds) {
 			printf (_g("I: Running debconf for seed file: %s\n"), $s);
-			system ("$str $env chroot" . shellescape($dir) . " debconf-set-selections /tmp/preseeds/$s");
+			system ("$str $env chroot " . shellescape($dir) . " debconf-set-selections /tmp/preseeds/$s");
 		}
 	}
 	&run_native_hooks_start(sort @{$hooks{'N'}}) if (defined ($hooks{'N'}));
@@ -988,7 +988,7 @@ sub native {
 			$t =~ s/\.preinst//;
 			next if ($t =~ /$f/);
 			next if ($script =~ /bash/);
-			system ("$str $env chroot" . shellescape($dir) . " /var/lib/dpkg/info/$script install");
+			system ("$str $env chroot " . shellescape($dir) . " /var/lib/dpkg/info/$script install");
 		}
 	}
 	my $retval = 0;
