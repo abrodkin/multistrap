@@ -1,6 +1,8 @@
 multistrap (2.2.8) UNRELEASED; urgency=medium
 
   * Add missing whitespace between arguments in system() command
+  * Install more default configurations (for trusty, wheezy, jessie, stretch,
+    and sid)
 
  -- Johannes Schauer <josch@debian.org>  Sat, 24 Dec 2016 02:33:48 +0100
 

@@ -6,8 +6,13 @@ examples/multiarch.conf ./usr/share/doc/multistrap/examples/
 examples/full.conf ./usr/share/doc/multistrap/examples/
 examples/setup.sh ./usr/share/doc/multistrap/examples/
 examples/config.sh ./usr/share/doc/multistrap/examples/
-examples/sid.conf ./usr/share/multistrap/
+examples/trusty.conf ./usr/share/multistrap/
+examples/trusty-ports.conf ./usr/share/multistrap/
+examples/wheezy.conf ./usr/share/multistrap/
 examples/squeeze.conf ./usr/share/multistrap/
+examples/jessie.conf ./usr/share/multistrap/
+examples/stretch.conf ./usr/share/multistrap/
+examples/sid.conf ./usr/share/multistrap/
 examples/chroot.sh ./usr/share/multistrap/
 examples/chroot.conf ./usr/share/multistrap/
 check-deps.sh ./usr/share/multistrap/
