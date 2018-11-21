@@ -1,3 +1,10 @@
+multistrap (2.2.10) unstable; urgency=medium
+
+  * Orphaning the package, See #914282
+  * Include and use a copy of the ancient po4a-build script. (Closes: #906386)
+
+ -- Johannes 'josch' Schauer <josch@debian.org>  Wed, 21 Nov 2018 15:00:46 +0100
+
 multistrap (2.2.9) unstable; urgency=medium
 
   * Fix foreign-multiarch multistraps

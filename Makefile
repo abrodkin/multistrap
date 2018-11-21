@@ -7,7 +7,7 @@ all: docbuild
 	$(MAKE) -C po
 
 docbuild:
-	po4a-build
+	./po4a-build
 
 install:
 	$(MAKE) -C po install DESTDIR=../debian/multistrap
@@ -20,5 +20,5 @@ clean:
 
 # adds the POT file to the source tarball
 native-dist: Makefile
-	po4a-build --pot-only
+	./po4a-build --pot-only
 	$(MAKE) -C po pot

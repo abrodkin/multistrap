@@ -1,8 +1,7 @@
 Source: multistrap
 Section: utils
 Priority: optional
-Maintainer: Johannes Schauer <josch@debian.org>
-Uploaders: Wookey <wookey@debian.org>
+Maintainer: Debian QA Group <packages@qa.debian.org>
 Build-Depends: debhelper (>= 10)
 Build-Depends-Indep: intltool, po4a (>= 0.37.1), bash-completion
 Standards-Version: 3.9.6
