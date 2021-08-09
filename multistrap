@@ -254,10 +254,10 @@ foreach my $aptsrc (@debootstrap) {
 				print SOURCES "deb $mirror $suite $component\n";
 			} else {
 				if (scalar (@foreignarches) == 0) {
-					print SOURCES "deb [arch=$arch] $mirror $suite $component\n";
+					print SOURCES "deb [arch=all,$arch] $mirror $suite $component\n";
 				} else {
 					foreach my $farch (@foreignarches) {
-						print SOURCES "deb [arch=$farch] $mirror $suite $component\n";
+						print SOURCES "deb [arch=all,$farch] $mirror $suite $component\n";
 					}
 				}
 			}
@@ -444,10 +444,10 @@ foreach my $aptsrc (@aptsources) {
 				print SOURCES "deb $mirror $suite $component\n";
 			} else {
 				if (scalar (@foreignarches) == 0) {
-					print SOURCES "deb [arch=$arch] $mirror $suite $component\n";
+					print SOURCES "deb [arch=all,$arch] $mirror $suite $component\n";
 				} else {
 					foreach my $farch (@foreignarches) {
-						print SOURCES "deb [arch=$farch] $mirror $suite $component\n";
+						print SOURCES "deb [arch=all,$farch] $mirror $suite $component\n";
 					}
 				}
 			}
