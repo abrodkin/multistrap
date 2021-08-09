@@ -261,7 +261,6 @@ foreach my $aptsrc (@debootstrap) {
 					}
 				}
 			}
-			print SOURCES "deb-src $mirror $suite $component\n" if (not defined $omitdebsrc{$aptsrc});
 			close SOURCES;
 		}
 	}
@@ -452,7 +451,6 @@ foreach my $aptsrc (@aptsources) {
 					}
 				}
 			}
-			print SOURCES "deb-src $mirror $suite $component\n" if (not defined $omitdebsrc{$aptsrc});
 			close SOURCES;
 		}
 	}
